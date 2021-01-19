@@ -1,4 +1,4 @@
-﻿namespace Infrastructure
+﻿namespace IntegrationTests
 {
     using Domain;
     using Microsoft.EntityFrameworkCore;

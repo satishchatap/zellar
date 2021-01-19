@@ -5,8 +5,8 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-[assembly: SuppressMessage("CodeQuality", "IDE0052:Remove unread private members", Justification = "<Pending>", Scope = "member", Target = "~F:Application.UseCases.ArticleComment.CommentValidationUseCase._outputPort")]
-[assembly: SuppressMessage("CodeQuality", "IDE0052:Remove unread private members", Justification = "<Pending>", Scope = "member", Target = "~F:Application.UseCases.GetArticle.GetArticleValidationUseCase._outputPort")]
-[assembly: SuppressMessage("CodeQuality", "IDE0052:Remove unread private members", Justification = "<Pending>", Scope = "member", Target = "~F:Application.UseCases.CreateArticle.CreateArticleValidationUseCase._outputPort")]
-[assembly: SuppressMessage("CodeQuality", "IDE0052:Remove unread private members", Justification = "<Pending>", Scope = "member", Target = "~F:Application.UseCases.ArticleLike.LikeValidationUseCase._outputPort")]
-[assembly: SuppressMessage("CodeQuality", "IDE0052:Remove unread private members", Justification = "<Pending>", Scope = "member", Target = "~F:Application.UseCases.EditArticle.EditArticleValidationUseCase._outputPort")]
+[assembly: SuppressMessage("CodeQuality", "IDE0052:Remove unread private members", Justification = "<Pending>", Scope = "member", Target = "~F:Application.UseCases.ProductComment.CommentValidationUseCase._outputPort")]
+[assembly: SuppressMessage("CodeQuality", "IDE0052:Remove unread private members", Justification = "<Pending>", Scope = "member", Target = "~F:Application.UseCases.GetProduct.GetProductValidationUseCase._outputPort")]
+[assembly: SuppressMessage("CodeQuality", "IDE0052:Remove unread private members", Justification = "<Pending>", Scope = "member", Target = "~F:Application.UseCases.CreateProduct.CreateProductValidationUseCase._outputPort")]
+[assembly: SuppressMessage("CodeQuality", "IDE0052:Remove unread private members", Justification = "<Pending>", Scope = "member", Target = "~F:Application.UseCases.ProductLike.LikeValidationUseCase._outputPort")]
+[assembly: SuppressMessage("CodeQuality", "IDE0052:Remove unread private members", Justification = "<Pending>", Scope = "member", Target = "~F:Application.UseCases.EditProduct.EditProductValidationUseCase._outputPort")]

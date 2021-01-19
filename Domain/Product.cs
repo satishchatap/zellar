@@ -2,10 +2,21 @@
 
 namespace Domain
 {
-    public class Product : IProduct, IAuditEntity
+    public class Product : IProduct
     {
         public Product(string name, string status, string supplier, float rate, int contractLength, float dailyStandingCharge)
         {
+            Name = name;
+            Status = status;
+            Supplier = supplier;
+            Rate = rate;
+            ContractLength = contractLength;
+            DailyStandingCharge = dailyStandingCharge;
+        }
+
+        public Product(int id, string name, string status, string supplier, float rate, int contractLength, float dailyStandingCharge)
+        {
+            Id = id;
             Name = name;
             Status = status;
             Supplier = supplier;
@@ -22,32 +33,8 @@ namespace Domain
         public int ContractLength { get; set; }
         public int Renewable { get; set; }
         public string Status { get; set; }
-        public byte[] RowVersion { get; }
-        public DateTime CreatedOn { get; private set; }
-        public DateTime ModifiedOn { get; private set; }
-        public string CreatedBy { get; private set; }
-        public string ModifiedBy { get; private set; }
 
-        public void Audit(string userName, AuditType type)
-        {
-            switch (type)
-            {
-                case AuditType.Add:
-                    CreatedBy = userName;
-                    CreatedOn = DateTime.UtcNow;
-                    ModifiedBy = userName;
-                    ModifiedOn = DateTime.UtcNow;
-                    break;
-                case AuditType.Modify:
-                    ModifiedBy = userName;
-                    ModifiedOn = DateTime.UtcNow;
-                    break;
-                case AuditType.Delete:
-                    ModifiedBy = userName;
-                    ModifiedOn = DateTime.UtcNow;
-                    break;
-            }
-        }
+        public byte[] RowVersion { get; set; }
     }
 
 }

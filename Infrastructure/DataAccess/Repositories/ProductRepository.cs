@@ -30,9 +30,9 @@
                 .ConfigureAwait(false);
         }
 
-        public void Delete(int productId)
+        public void Delete(int id)
         {
-            this._context.Products.Remove(this._context.Products.First(a => a.Id == productId));
+            this._context.Products.Remove(this._context.Products.First(a => a.Id == id));
         }
         /// <inheritdoc />
         public async Task<IProduct> GetProduct(int Id)

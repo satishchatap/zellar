@@ -37,11 +37,11 @@ namespace Infrastructure.DataAccess.Repositories
                 .ConfigureAwait(false);
         }
         /// <inheritdoc />
-        public async Task Delete(int productId)
+        public async Task Delete(int id)
         {
             Product productOld = this._context
                 .Products
-                .SingleOrDefault(e => e.Id.Equals(productId));
+                .SingleOrDefault(e => e.Id.Equals(id));
 
             this._context
                 .Products
@@ -51,18 +51,18 @@ namespace Infrastructure.DataAccess.Repositories
                 .ConfigureAwait(false);
         }
 
-        public Task DeleteAsyc(int productId)
+        public Task DeleteAsyc(int id)
         {
             throw new NotImplementedException();
         }
 
 
         /// <inheritdoc />
-        public async Task<IProduct> GetProduct(int productId)
+        public async Task<IProduct> GetProduct(int id)
         {
             Product product = this._context
                 .Products
-                .SingleOrDefault(e => e.Id.Equals(productId));
+                .SingleOrDefault(e => e.Id.Equals(id));
 
             if (product == null)
             {

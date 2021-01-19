@@ -7,9 +7,9 @@ namespace Domain
     {
         /// <summary>
         /// </summary>
-        /// <param name="productId"></param>
+        /// <param name="id"></param>
         /// <returns></returns>
-        Task<IProduct> GetProduct(int productId);
+        Task<IProduct> GetProduct(int id);
 
         /// <summary>
         /// Get All Products
@@ -17,12 +17,13 @@ namespace Domain
         /// <returns></returns>
         Task<IList<Product>> GetAllProducts();
 
+
         /// <summary>
         ///     Deletes the Product.
         /// </summary>
-        /// <param name="productId">Product Id.</param>
+        /// <param name="id">Product Id.</param>
         /// <returns>Task.</returns>
-        Task DeleteAsyc(int productId);
+        Task DeleteAsyc(int id);
 
         /// <summary>
         ///     create the Product.
