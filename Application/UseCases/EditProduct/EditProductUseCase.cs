@@ -26,20 +26,26 @@
         public void SetOutputPort(IOutputPort outputPort) => this._outputPort = outputPort;
 
         /// <inheritdoc />
-        public Task Execute(int id, string name, string status, string supplier, float rate, int contractLength, float dailyStandingCharge) =>
-            this.EditProduct(id, name, status, supplier, rate, contractLength, dailyStandingCharge);
+        public Task Execute(int id, string name, string status, string supplier, float rate, int contractLength, float dailyStandingCharge, int renewable) =>
+            this.EditProduct(id, name, status, supplier, rate, contractLength, dailyStandingCharge, renewable);
 
-        private async Task EditProduct(int id, string name, string status, string supplier, float rate, int contractLength, float dailyStandingCharge)
+        private async Task EditProduct(int id, string name, string status, string supplier, float rate, int contractLength, float dailyStandingCharge, int renewable)
         {
             var productExisting =await this._productRepository.GetProduct(id)
                 .ConfigureAwait(false);
 
-            var product = new Product(productExisting.Id, name, status, supplier, rate, contractLength, dailyStandingCharge);
+            productExisting.Name = name; 
+            productExisting.Status = status;
+            productExisting.Supplier = supplier;
+            productExisting.Rate = rate;
+            productExisting.ContractLength = contractLength;
+            productExisting.DailyStandingCharge = dailyStandingCharge;
+            productExisting.Renewable = renewable;
 
-            await this.Product(product)
+            await this.Product((Product)productExisting)
                 .ConfigureAwait(false);
 
-            this._outputPort?.Ok(product);
+            this._outputPort?.Ok((Product)productExisting);
         }
 
         private async Task Product(Product product)

@@ -44,6 +44,6 @@ namespace Domain
         /// </summary>
         /// <param name="productSearch">Product Search.</param>
         /// <returns>list of products</returns>     
-        Task<IList<IProduct>> Find(IProductSearch productSearch);
+        Task<IList<Product>> Find(ProductSearch productSearch);
     }
 }

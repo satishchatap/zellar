@@ -46,9 +46,9 @@ namespace WebApi.Modules.Common.Swagger
         {
             OpenApiInfo info = new OpenApiInfo
             {
-                Title = "Simple Blog API",
+                Title = "Zellar API",
                 Version = description.ApiVersion.ToString(),
-                Description = "Simple Blog Api, DDD and TDD implementation.",
+                Description = "Zellar Api, DDD and TDD implementation.",
                 Contact = new OpenApiContact {Name = "Satish Chatap", Email = "test@test.test"},
                 TermsOfService = new Uri(UriString),
                 License = new OpenApiLicense

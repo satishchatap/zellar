@@ -16,15 +16,36 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{B566B45B-D646-408B-AC1F-4D2F7925DFEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{32B8E907-E5C1-46A0-A3C3-299114AD6B8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTest", "UnitTest\UnitTest.csproj", "{32B8E907-E5C1-46A0-A3C3-299114AD6B8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComponentTests", "ComponentTests\ComponentTests.csproj", "{00DDCE94-6475-45EA-9412-63C64B97445F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComponentTests", "ComponentTests\ComponentTests.csproj", "{00DDCE94-6475-45EA-9412-63C64B97445F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTests", "IntegrationTests\IntegrationTests.csproj", "{557CDA8D-645B-405A-8EC9-B02FFC59A6F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntegrationTests", "IntegrationTests\IntegrationTests.csproj", "{557CDA8D-645B-405A-8EC9-B02FFC59A6F1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{63A9F6AA-B612-40A1-BFEE-C6F3C85C89BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{0B762BFE-2047-4A5E-A5B4-095260629FEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csproj", "{0B762BFE-2047-4A5E-A5B4-095260629FEB}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "zellar-spa", "zellar-spa\", "{77C7FFB7-3F82-4005-9C14-2F9E919AC832}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_53305"
+		Debug.AspNetCompiler.PhysicalPath = "zellar-spa\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53305\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_53305"
+		Release.AspNetCompiler.PhysicalPath = "zellar-spa\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53305\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "53305"
+		SlnRelativePath = "zellar-spa\"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,6 +81,10 @@ Global
 		{0B762BFE-2047-4A5E-A5B4-095260629FEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B762BFE-2047-4A5E-A5B4-095260629FEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B762BFE-2047-4A5E-A5B4-095260629FEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77C7FFB7-3F82-4005-9C14-2F9E919AC832}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77C7FFB7-3F82-4005-9C14-2F9E919AC832}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77C7FFB7-3F82-4005-9C14-2F9E919AC832}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{77C7FFB7-3F82-4005-9C14-2F9E919AC832}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

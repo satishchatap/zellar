@@ -45,7 +45,6 @@
         /// <response code="200">The List of Products.</response>
         /// <response code="404">Not Found.</response>
         /// <returns>An asynchronous <see cref="IActionResult" />.</returns>
-        [Authorize]
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GetAllProductsResponse))]
         [ApiConventionMethod(typeof(CustomApiConventions), nameof(CustomApiConventions.List))]

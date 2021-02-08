@@ -24,11 +24,11 @@ namespace Application.UseCases.CreateProduct
         }
 
         /// <inheritdoc />
-        public async Task Execute(string name, string status, string supplier, float rate, int contractLength, float dailyStandingCharge)
+        public async Task Execute(string name, string status, string supplier, float rate, int contractLength, float dailyStandingCharge, int renewable)
         {          
 
             await this._useCase
-                .Execute(name, status, supplier, rate, contractLength, dailyStandingCharge)
+                .Execute(name, status, supplier, rate, contractLength, dailyStandingCharge, renewable)
                 .ConfigureAwait(false);
         }
     }

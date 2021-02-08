@@ -23,6 +23,7 @@
             Rate = product.Rate;
             ContractLength = product.ContractLength;
             DailyStandingCharge = product.DailyStandingCharge;
+            Renewable = product.Renewable;
         }
 
         /// <summary>
@@ -30,6 +31,9 @@
         /// </summary>
         [Required]
         public int Id { get; }
+        /// <summary>
+        /// Supplier
+        /// </summary>
         public string Supplier { get; set; }
         /// <summary>
         /// Supplier

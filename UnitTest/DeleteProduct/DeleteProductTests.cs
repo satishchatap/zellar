@@ -3,7 +3,6 @@
     using Domain;
     using Infrastructure;
     using Infrastructure.DataAccess.Repositories;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Linq;
     using System.Threading.Tasks;
     using Xunit;
@@ -14,7 +13,7 @@
         public DeleteProductTests(StandardFixture fixture) => this._fixture = fixture;
 
         [Fact]
-        public async Task DeleteProduct_and_childs()
+        public async Task DeleteProduct()
         {
             ProductRepositoryFake productRepository = new ProductRepositoryFake(this._fixture.Context);
 
@@ -24,7 +23,8 @@
                 SeedData.DefaultSupplier,
                 SeedData.DefaultRate,
                 SeedData.DefaultContractLength,
-                SeedData.DefaultDailyStandingCharge);
+                SeedData.DefaultDailyStandingCharge,
+                SeedData.Renewable);
 
             
 
@@ -38,7 +38,7 @@
                 .Any(e => e.Id == product.Id);
 
         
-            Assert.IsTrue(hasAnyProduct);
+            Assert.True(hasAnyProduct);
 
             var productDelete = this._fixture
                .Context
@@ -47,7 +47,7 @@
 
             var actual = this._fixture.Context.Products.Remove(productDelete);
 
-            Assert.IsTrue(actual);
+            Assert.True(actual);
         }
 
 

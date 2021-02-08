@@ -26,14 +26,14 @@
         public void SetOutputPort(IOutputPort outputPort) => this._outputPort = outputPort;
 
         /// <inheritdoc />
-        public Task Execute(IProductSearch productSearch)
+        public Task Execute(ProductSearch productSearch)
         {
             return this.GetProducts(productSearch);
         }
 
-        private async Task GetProducts(IProductSearch productSearch)
+        private async Task GetProducts(ProductSearch productSearch)
         {
-            IList<IProduct>? products = await this._productRepository
+            IList<Product>? products = await this._productRepository
                 .Find(productSearch)
                 .ConfigureAwait(false);
 

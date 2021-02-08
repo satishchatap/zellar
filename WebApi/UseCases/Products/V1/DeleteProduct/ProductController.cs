@@ -57,8 +57,7 @@ namespace WebApi.UseCases.Products.V1.DeleteProduct
         /// <response code="404">Not Found.</response>
         /// <param name="id">The Id.</param>
         /// <returns>ViewModel.</returns>
-        [Authorize(Policy = "FullAccess")]
-        [HttpDelete("{id:guid}")]
+        [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(DeleteProductResponse))]
         [ApiConventionMethod(typeof(CustomApiConventions), nameof(CustomApiConventions.Delete))]
         public async Task<IActionResult> Delete(

@@ -16,7 +16,7 @@
                 SeedData.DefaultSupplier,
                 SeedData.DefaultRate,
                 SeedData.DefaultContractLength,
-                SeedData.DefaultDailyStandingCharge);
+                SeedData.DefaultDailyStandingCharge,SeedData.Renewable);
 
           
             this.Products.Add(product);
@@ -27,7 +27,7 @@
                 SeedData.DefaultSupplier2,
                 SeedData.DefaultRate2,
                 SeedData.DefaultContractLength2,
-                SeedData.DefaultDailyStandingCharge2);
+                SeedData.DefaultDailyStandingCharge2, SeedData.Renewable2);
 
             this.Products.Add(product2);
         }

@@ -74,7 +74,7 @@ namespace Infrastructure.DataAccess.Repositories
         }
 
         /// <inheritdoc />
-        public async Task<IList<IProduct>> Find(IProductSearch productSearch)
+        public async Task<IList<Product>> Find(ProductSearch productSearch)
         {
             List<Product> products = this._context
                 .Products
@@ -85,7 +85,7 @@ namespace Infrastructure.DataAccess.Repositories
                         )
                 .ToList();
 
-            return (IList<IProduct>)await Task.FromResult(products)
+            return await Task.FromResult(products)
                 .ConfigureAwait(false);
         }
 

@@ -37,7 +37,7 @@
             this._useCase = useCase;
         }
 
-        void IOutputPort.Ok(IList<IProduct> products) => this._viewModel = this.Ok(new GetProductsResponse(products));
+        void IOutputPort.Ok(IList<Product> products) => this._viewModel = this.Ok(new GetProductsResponse(products));
 
         /// <summary>
         ///     Get Products.
@@ -45,11 +45,10 @@
         /// <response code="200">The List of Products.</response>
         /// <response code="404">Not Found.</response>
         /// <returns>An asynchronous <see cref="IActionResult" />.</returns>
-        [Authorize(Policy = "FullAccess")]
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GetProductsResponse))]
         [ApiConventionMethod(typeof(CustomApiConventions), nameof(CustomApiConventions.List))]
-        public async Task<IActionResult> Get(IProductSearch productSearch)
+        public async Task<IActionResult> Get(ProductSearch productSearch)
         {
             this._useCase.SetOutputPort(this);
 

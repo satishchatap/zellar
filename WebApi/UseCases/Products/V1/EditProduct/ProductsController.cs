@@ -52,14 +52,17 @@
         /// <response code="200">Product already exists,</response>
         /// <response code="201">The product was created successfully.</response>
         /// <response code="400">Bad request.</response>
-        /// <param name="id">product id.</param>
-        /// <param name="useCase">Use case.</param>
-        /// <param name="title"></param>
-        /// <param name="summary"></param>
-        /// <param name="body"></param>
+        /// <param name="id"></param>
+        /// <param name="useCase"></param>
+        /// <param name="name"></param>
+        /// <param name="status"></param>
+        /// <param name="supplier"></param>
+        /// <param name="rate"></param>
+        /// <param name="contractLength"></param>
+        /// <param name="dailyStandingCharge"></param>
+        /// <param name="renewable"></param>
         /// <returns>The newly created product.</returns>
-        [Authorize(Policy = "FullAccess")]
-        [HttpPatch("{id:guid}")]
+        [HttpPatch("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(EditProductResponse))]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(EditProductResponse))]
         [ApiConventionMethod(typeof(CustomApiConventions), nameof(CustomApiConventions.Post))]
@@ -70,10 +73,11 @@
             [FromForm][Required] string supplier,
             [FromForm][Required] float rate,
             [FromForm][Required] int contractLength,
-            [FromForm][Required] float dailyStandingCharge)
+            [FromForm][Required] float dailyStandingCharge, 
+            [FromForm][Required] int renewable)
         {
             useCase.SetOutputPort(this);
-            await useCase.Execute(id, name, status, supplier, rate, contractLength, dailyStandingCharge)
+            await useCase.Execute(id, name, status, supplier, rate, contractLength, dailyStandingCharge, renewable)
                 .ConfigureAwait(false);
 
             return this._viewModel!;

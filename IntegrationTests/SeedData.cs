@@ -14,6 +14,7 @@
         public static readonly int DefaultContractLength = 39;
         public static readonly string DefaultStatus = "live";
         public static readonly float DefaultDailyStandingCharge = 0.35F;
+        public static readonly int Renewable = 90;
 
         public static readonly int SecondId2 = 109;
         public static readonly string DefaultName2 = "black friday prices";
@@ -22,8 +23,7 @@
         public static readonly int DefaultContractLength2 = 24;
         public static readonly string DefaultStatus2 = "expired";
         public static readonly float DefaultDailyStandingCharge2 = 0.35F;
-
-
+        public static readonly int Renewable2 = 100;
 
 
         public static void Seed(ModelBuilder builder)

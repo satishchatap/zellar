@@ -8,7 +8,7 @@ namespace Application.UseCases.EditProduct
         /// <summary>
         ///     Executes the Use Case
         /// </summary>
-        Task Execute(int id, string name, string status, string supplier, float rate, int contractLength, float dailyStandingCharge);
+        Task Execute(int id, string name, string status, string supplier, float rate, int contractLength, float dailyStandingCharge, int renewable);
 
         /// <summary>
         ///     Sets the Output Port.

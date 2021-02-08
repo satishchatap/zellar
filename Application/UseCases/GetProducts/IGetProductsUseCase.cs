@@ -12,7 +12,7 @@
         ///     Executes the use case.
         /// </summary>
         /// <returns>Task.</returns>
-        Task Execute(IProductSearch productSearch);
+        Task Execute(ProductSearch productSearch);
 
         /// <summary>
         ///     Sets the Output Port.

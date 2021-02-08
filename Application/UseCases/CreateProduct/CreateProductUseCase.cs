@@ -27,13 +27,13 @@
         public void SetOutputPort(IOutputPort outputPort) => this._outputPort = outputPort;
 
         /// <inheritdoc />
-        public Task Execute(string name, string status, string supplier, float rate, int contractLength, float dailyStandingCharge) =>
-            this.CreateProduct(name, status, supplier, rate, contractLength, dailyStandingCharge);
+        public Task Execute(string name, string status, string supplier, float rate, int contractLength, float dailyStandingCharge, int renewable) =>
+            this.CreateProduct(name, status, supplier, rate, contractLength, dailyStandingCharge, renewable);
 
-        private async Task CreateProduct(string name, string status, string supplier, float rate, int contractLength, float dailyStandingCharge)
+        private async Task CreateProduct(string name, string status, string supplier, float rate, int contractLength, float dailyStandingCharge,int renewable)
         {
             Product product = this._productFactory
-                .NewProduct( name,  status,  supplier,  rate,  contractLength,  dailyStandingCharge);
+                .NewProduct( name,  status,  supplier,  rate,  contractLength, dailyStandingCharge,renewable);
 
             await this.Product(product)
                 .ConfigureAwait(false);

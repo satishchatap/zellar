@@ -5,7 +5,7 @@
 
     public sealed class GetProductsPresenter : IOutputPort
     {
-        public IList<IProduct>? Products { get; private set; }
-        public void Ok(IList<IProduct> products) => this.Products = products;
+        public IList<Product>? Products { get; private set; }
+        public void Ok(IList<Product> products) => this.Products = products;
     }
 }

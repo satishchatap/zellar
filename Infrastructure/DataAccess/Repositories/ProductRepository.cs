@@ -53,20 +53,20 @@
             return ProductNull.Instance;
         }
 
-        public async Task<IList<IProduct>> Find(IProductSearch productSearch)
+        public async Task<IList<Product>> Find(ProductSearch productSearch)
         {
-            IList<Product> Products = await this._context
+            List<Product> Products = await this._context
                 .Products
                 .Where(e => 
-                        e.Status == (productSearch.Status.Length>0 ? productSearch.Status: e.Status) &&
-                        e.Status == (productSearch.Supplier.Length > 0 ? productSearch.Supplier : e.Supplier) &&
+                        e.Status == (productSearch.Status != null && productSearch.Status.Length>0 ? productSearch.Status: e.Status) &&
+                        e.Supplier == (productSearch.Supplier != null && productSearch.Supplier.Length > 0 ? productSearch.Supplier : e.Supplier) &&
                         e.Rate == (productSearch.Rate ?? e.Rate) &&
                         e.ContractLength == (productSearch.ContractLength ?? e.ContractLength)
                         )
                 .ToListAsync()
                 .ConfigureAwait(false);
 
-            return (IList<IProduct>)Products;
+            return Products;
         }
         public async Task<IList<Product>> GetAllProducts()
         {
@@ -89,10 +89,11 @@
         }
         public async Task Update(Product product)
         {
-            await this._context
+            await Task.Run(()=> {
+               this._context
                 .Products
-                .AddAsync(product)
-                .ConfigureAwait(false);
+                .Update(product);
+           });
         }
     }
 }

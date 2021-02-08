@@ -23,7 +23,7 @@ namespace IntegrationTests.EntityFrameworkTests
                 SeedData.DefaultSupplier,
                 SeedData.DefaultRate,
                 SeedData.DefaultContractLength,
-                SeedData.DefaultDailyStandingCharge);
+                SeedData.DefaultDailyStandingCharge, SeedData.Renewable);
 
             await productRepository
                .Add(product)
@@ -54,9 +54,9 @@ namespace IntegrationTests.EntityFrameworkTests
                 SeedData.DefaultSupplier,
                 SeedData.DefaultRate,
                 SeedData.DefaultContractLength,
-                SeedData.DefaultDailyStandingCharge);
+                SeedData.DefaultDailyStandingCharge, SeedData.Renewable);
 
-           
+
 
             await productRepository
                .Add(product)

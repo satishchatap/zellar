@@ -11,6 +11,6 @@
         /// <summary>
         ///     Listed products.
         /// </summary>
-        void Ok(IList<IProduct> products);
+        void Ok(IList<Product> products);
     }
 }

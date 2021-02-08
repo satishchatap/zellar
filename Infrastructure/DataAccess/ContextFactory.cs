@@ -39,7 +39,8 @@ namespace Infrastructure.DataAccess
                 .AddEnvironmentVariables()
                 .Build();
 
-            string connectionString = configuration.GetConnectionString("PersistenceModule:DefaultConnection");
+            string connectionString = configuration.GetSection("PersistenceModule:DefaultConnection").Value;
+
             return connectionString;
         }
     }

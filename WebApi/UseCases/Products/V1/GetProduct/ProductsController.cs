@@ -53,8 +53,7 @@
         /// <param name="useCase">Use case.</param>
         /// <param name="id"></param>
         /// <returns>An asynchronous <see cref="IActionResult" />.</returns>
-        [Authorize]
-        [HttpGet("{id:guid}", Name = "GetProduct")]
+        [HttpGet("{id:int}", Name = "GetProduct")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GetProductResponse))]
         [ApiConventionMethod(typeof(CustomApiConventions), nameof(CustomApiConventions.Find))]
         public async Task<IActionResult> Get(
